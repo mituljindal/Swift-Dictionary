@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +21,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oj6-Rb-ann">
+                                <rect key="frame" x="40" y="103" width="294" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htG-8M-Iwr">
+                                <rect key="frame" x="282" y="149" width="52" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tb1-ht-JE8"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GK6-ss-Fz6">
+                                <rect key="frame" x="40" y="209" width="294" height="386"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oj6-Rb-ann" secondAttribute="trailing" constant="25" id="1VQ-PI-IfI"/>
+                            <constraint firstItem="GK6-ss-Fz6" firstAttribute="top" secondItem="htG-8M-Iwr" secondAttribute="bottom" constant="30" id="2SD-C3-ivI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GK6-ss-Fz6" secondAttribute="trailing" constant="25" id="7fD-cA-kBL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="htG-8M-Iwr" secondAttribute="bottom" constant="488" id="AU8-it-BSc"/>
+                            <constraint firstItem="oj6-Rb-ann" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="B22-Cl-KBR"/>
+                            <constraint firstItem="GK6-ss-Fz6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="F2i-Mv-boe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oj6-Rb-ann" secondAttribute="bottom" constant="534" id="IKR-cs-vxO"/>
+                            <constraint firstItem="oj6-Rb-ann" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="L9s-Ur-1HL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="htG-8M-Iwr" secondAttribute="trailing" constant="25" id="aVp-e4-xSE"/>
+                            <constraint firstItem="htG-8M-Iwr" firstAttribute="top" secondItem="oj6-Rb-ann" secondAttribute="bottom" constant="16" id="tWo-pO-tns"/>
+                            <constraint firstItem="htG-8M-Iwr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="266" id="u3K-J7-c9D"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GK6-ss-Fz6" secondAttribute="bottom" constant="72" id="xVH-CB-33B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="meaningField" destination="GK6-ss-Fz6" id="4YP-iQ-fwT"/>
+                        <outlet property="searchField" destination="oj6-Rb-ann" id="tRY-23-9QM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
